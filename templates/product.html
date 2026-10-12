@@ -1,16 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <title>Products</title>
+    <title>Our Products</title>
 </head>
 <body>
-    <h1>This are Products</h1>
+    <h1>Our Products</h1>
+    <p>These are our products.</p>
     {% for p in products %}
-        <h3>Product {{ p[0] }}</h3>
-        <h2>{{ p[1] }}</h2>
-        <p>{{ p[2] }}</p>
-        <h3>Price={{ p[3] }}</h3>
-        <p>Available = {{ p[4] }}</p>
+        <h3>Product {{ p.id }}</h3>
+        <h2>{{ p.name }}</h2>
+        <p>{{ p.description }}</p>
+        <h3>Price - ₹{{ p.price }}</h3>
+        <p>Available = {{ p.available }}</p>
+    {% else %}
+        <p>No products available.</p>
     {% endfor %}
     <a href="/logout">Logout</a>
 </body>
