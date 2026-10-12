@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h1>This are Products</h1>
+    {% for p in products %}
+        <h3>Product {{ p[0] }}</h3>
+        <h2>{{ p[1] }}</h2>
+        <p>{{ p[2] }}</p>
+        <h3>Price={{ p[3] }}</h3>
+        <p>Available = {{ p[4] }}</p>
+    {% endfor %}
+    <a href="/logout">Logout</a>
+</body>
+</html>
