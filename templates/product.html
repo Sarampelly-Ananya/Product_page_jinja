@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Our Products</title>
@@ -6,15 +6,20 @@
 <body>
     <h1>Our Products</h1>
     <p>These are our products.</p>
+
     {% for p in products %}
-        <h3>Product {{ p.id }}</h3>
-        <h2>{{ p.name }}</h2>
+        <hr>
+
+        <h2>Product {{ loop.index }}: {{ p.name }}</h2>
+
         <p>{{ p.description }}</p>
-        <h3>Price - ₹{{ p.price }}</h3>
-        <p>Available = {{ p.available }}</p>
-    {% else %}
-        <p>No products available.</p>
+
+        <p>Price: ₹{{ p.price }}</p>
+
+        <p>Available: {{ p.available }}</p>
     {% endfor %}
-    <a href="/logout">Logout</a>
+
+    <br>
+    <a href="/logout">Back to Login</a>
 </body>
 </html>

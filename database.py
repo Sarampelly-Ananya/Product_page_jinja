@@ -2,16 +2,15 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 from urllib.parse import quote_plus
-
-username = "root"
-password = quote_plus("Ananya@2702")
-host = "localhost"
-port = "3306"
-database_name = "products_db"
+DB_USER = "root"
+DB_PASSWORD = quote_plus("Ananya@2702")
+DB_HOST = "localhost"
+DB_PORT = "3306"
+DB_NAME = "products_db"
 
 DATABASE_URL = (
-    f"mysql+pymysql://{username}:{password}"
-    f"@{host}:{port}/{database_name}"
+    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}"
+    f"@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 
 engine = create_engine(DATABASE_URL)
